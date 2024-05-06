@@ -27,8 +27,8 @@
                             @foreach(var item in Model.Products) {
                                     <div class="col-xl-3 col-lg-4 col-sm-6">
                                     <div class="product-item">
-                                        <div class="product-img img-zoom-effect">
-                                            <a href="single-product.html">
+                                        <div class="product-img img-zoom-effect" >
+                                            <a asp-action="Details" asp-controller="Product" asp-route-id="@item.ProductId">
                                                 <img class="img-full" src="../images/products/@item.Thumb" alt="Product Images">
                                             </a>
                                         </div>

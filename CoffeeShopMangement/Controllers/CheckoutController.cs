@@ -106,7 +106,7 @@ namespace WebShop.Controllers
                         orderDetail.OrderId = donhang.OrderId;
                         orderDetail.ProductId = item.product.ProductId;
                         orderDetail.Amount = item.amount;
-                        orderDetail.TotalMoney = item.product.Price;
+                        orderDetail.TotalMoney = item.product.Price*item.amount;
                         orderDetail.Price = item.product.Price;
                         orderDetail.CreateDate = DateTime.Now;
                         _context.Add(orderDetail);
