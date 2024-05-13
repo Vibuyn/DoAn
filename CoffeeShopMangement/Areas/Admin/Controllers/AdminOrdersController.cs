@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CoffeeShopMangement.Models;
+using PagedList.Core;
 
 namespace CoffeeShopMangement.Areas.Admin.Controllers
 {
@@ -20,10 +21,25 @@ namespace CoffeeShopMangement.Areas.Admin.Controllers
         }
 
         // GET: Admin/AdminOrders
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var coffeeShopManagementContext = _context.Orders.Include(o => o.Customer).Include(o => o.TransactStatus);
-            return View(await coffeeShopManagementContext.ToListAsync());
+            var pageNumber = page;
+            var pageSize = 20;
+            var lstOrder = new List<Order>();
+
+            lstOrder = _context.Orders
+                .AsNoTracking()
+                .OrderByDescending(x => x.OrderId).ToList();
+            
+
+
+
+            PagedList<Order> models = new PagedList<Order>(lstOrder.AsQueryable(), pageNumber, pageSize);
+
+            ViewBag.CurrentPage = pageNumber;
+
+
+            return View(models);
         }
 
         // GET: Admin/AdminOrders/Details/5
