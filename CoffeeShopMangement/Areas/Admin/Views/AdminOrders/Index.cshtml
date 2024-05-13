@@ -39,7 +39,7 @@
                     <tr>
                         <th>ID</th>
                         <th>Ngày đơn hàng</th>
-                        <th>Ngày thanh toán</th>
+                        <th>Sản phẩm</th>
                         <th>Tổng tiền</th>
                         <th>Trạng thái</th>
                         <th>Ghi chú</th>
@@ -54,6 +54,7 @@
                             <tr>
 
                                 <td>
+                                    fdsfsd
                                     @item.OrderId
                                 </td>
                                 <td>
@@ -62,7 +63,7 @@
                                         <h6 class="m-b-0 m-l-10">@(item.OrderDate != null ? ((DateTime)item.OrderDate).ToString("dd/MM/yyyy") : "")</h6>
                                     </div>
                                 </td>
-                                <td>@(item.PaymentDate)</td>
+                                <td>@(item.OrderDetails != null && item.OrderDetails.FirstOrDefault() != null && item.OrderDetails.FirstOrDefault().Product != null ? item.OrderDetails.FirstOrDefault().Product.ProductName : "")</td>
 
                                 <td>
                                     @if (item.TotalMoney != null)
