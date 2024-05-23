@@ -5,10 +5,10 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Chi tiết đơn hàng</h1>
 
 <div>
-    <h4>Order</h4>
+    <h4></h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -17,13 +17,32 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.OrderDate)
         </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ShipDate)
+            @Html.DisplayNameFor(model => model.OrderId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ShipDate)
+            @Html.DisplayFor(model => model.OrderId)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TotalMoney)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TotalMoney)
+        </dd>
+        @*<dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>*@
+
+
+        <@*dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Deleted)
         </dt>
         <dd class = "col-sm-10">
@@ -40,32 +59,27 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PaymentDate)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalMoney)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalMoney)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+        
+       @* <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.PaymentId)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.PaymentId)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Note)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Note)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Address)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.LocationId)
         </dt>
         <dd class = "col-sm-10">
@@ -82,13 +96,13 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Ward)
-        </dd>
-        <dt class = "col-sm-2">
+        </dd>*@
+        @*<dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Customer)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Customer.CustomerId)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.TransactStatus)
         </dt>
@@ -98,6 +112,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
+    <a asp-action="Edit" asp-route-id="@Model.OrderId">Sửa</a> |
     <a asp-action="Index">Back to List</a>
 </div>

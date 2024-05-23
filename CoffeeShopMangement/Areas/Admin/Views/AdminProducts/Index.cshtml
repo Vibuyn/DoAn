@@ -71,11 +71,17 @@
                                     </div>
                                 </td>
                                 <td>@(item.Cat != null ? item.Cat.CatName : "")</td>
-
-                                <td>@if(item.Price!=null){
+                                
+                                @*<td>@if(item.Price!=null){
                                         item.Price.Value.ToString("#,##0");
                                     }
-                                    VNĐ</td>
+                                    VNĐ</td>*@
+                                <td>
+                                    
+                                        @item.Price.Value.ToString("#,##0")
+                                   
+                                    VNĐ
+                                </td>
                                 <td>@item.UnitsInStock</td>
                                 <td>
                                     @if (item.UnitsInStock!=null && item.UnitsInStock.Value > 0)

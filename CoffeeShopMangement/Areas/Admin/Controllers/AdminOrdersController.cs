@@ -29,12 +29,17 @@ namespace CoffeeShopMangement.Areas.Admin.Controllers
 
             lstOrder = _context.Orders
                 .AsNoTracking()
+                .Include(t => t.OrderDetails)
+                .Include(t => t.TransactStatus)
+                .Include(t=>t.Customer)
+                
+                
                 .OrderByDescending(x => x.OrderId).ToList();
-            
 
 
 
-            PagedList<Order> models = new PagedList<Order>(lstOrder.AsQueryable(), pageNumber, pageSize);
+
+            PagedList<Order> models = new(lstOrder.AsQueryable(), pageNumber, pageSize);
 
             ViewBag.CurrentPage = pageNumber;
 
@@ -173,6 +178,16 @@ namespace CoffeeShopMangement.Areas.Admin.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        // POST: Admin/AdminOrders/Delete/5
+        [HttpPost, ActionName("Complete")]
+        [ValidateAntiForgeryToken]
+        //public async Task<IActionResult> Complete(int id)
+        //{
+        //    var order = await _context.Orders.FindAsync(id);
+        //    order.TransactStatusId = 2;
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         private bool OrderExists(int id)
         {

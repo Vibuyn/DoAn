@@ -5,9 +5,9 @@
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Edit</h1>
+<h1>Chỉnh sửa khách hàng </h1>
 
-<h4>Customer</h4>
+<h4></h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,21 +19,21 @@
                 <input asp-for="FullName" class="form-control" />
                 <span asp-validation-for="FullName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Birthday" class="control-label"></label>
                 <input asp-for="Birthday" class="form-control" />
                 <span asp-validation-for="Birthday" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label asp-for="Avatar" class="control-label"></label>
                 <input asp-for="Avatar" class="form-control" />
                 <span asp-validation-for="Avatar" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label asp-for="Address" class="control-label"></label>
                 <input asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
                 <input asp-for="Email" class="form-control" />
@@ -44,12 +44,12 @@
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="LocationId" class="control-label"></label>
                 <input asp-for="LocationId" class="form-control" />
                 <span asp-validation-for="LocationId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            @*<div class="form-group">
                 <label asp-for="District" class="control-label"></label>
                 <input asp-for="District" class="form-control" />
                 <span asp-validation-for="District" class="text-danger"></span>
@@ -58,7 +58,7 @@
                 <label asp-for="Ward" class="control-label"></label>
                 <input asp-for="Ward" class="form-control" />
                 <span asp-validation-for="Ward" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="CreateDate" class="control-label"></label>
                 <input asp-for="CreateDate" class="form-control" />
@@ -69,7 +69,7 @@
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Salt" class="control-label"></label>
                 <input asp-for="Salt" class="form-control" />
                 <span asp-validation-for="Salt" class="text-danger"></span>
@@ -78,12 +78,12 @@
                 <label asp-for="LastLogin" class="control-label"></label>
                 <input asp-for="LastLogin" class="form-control" />
                 <span asp-validation-for="LastLogin" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
+            </div>*@
+            @*<div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Active" /> @Html.DisplayNameFor(model => model.Active)
                 </label>
-            </div>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>

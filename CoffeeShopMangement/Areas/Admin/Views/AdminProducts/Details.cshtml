@@ -28,10 +28,10 @@
                     <td>Tên sản phẩm:</td>
                     <td>@Model.ProductName</td>
                 </tr>
-                <tr>
+                @*<tr>
                     <td>Mô tả ngắn:</td>
                     <td>@Model.ShortDesc</td>
-                </tr>
+                </tr>*@
                 <tr>
                     <td>Giá:</td>
                     <td>@Model.Price</td>
@@ -101,7 +101,7 @@
                 <tr>
                     <td>Danh mục:</td>
                     <td>@Model.Cat.CatName</td>
-                </tr>
+                @*</tr>
                 <tr>
                     <td>Ngày tạo:</td>
                     <td>@Model.DateCreated</td>
@@ -112,9 +112,9 @@
                 </tr>
                 <tr>
                     <td>Tiêu đề:</td>
-                    <td>@Model.Title</td>
+                    <td>@Model.Title</td>*@
                 </tr>
-                <tr>
+                @*<tr>
                     <td>MetaDesc:</td>
                     <td>@Model.MetaDesc</td>
                 </tr>
@@ -125,17 +125,17 @@
                 <tr>
                     <td>Tags:</td>
                     <td>@Model.Tags</td>
-                </tr>
+                </tr>*@
                 <tr>
                     <td>Ảnh đại diện:</td>
                     <td>
                         <img width="200" height="200" src="~/images/products/@Model.Thumb" alt="@Model.Title" />
                     </td>
                 </tr>
-                <tr>
+                @*<tr>
                     <td>Mô tả sản phẩm:</td>
                     <td>@Html.Raw(Model.Description)</td>
-                </tr>
+                </tr>*@
 
             </tbody>
         </table>
