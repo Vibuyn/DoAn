@@ -19,18 +19,18 @@
     <div class="card-body">
         <div class="row m-b-30">
             <div class="col-md-8">
-                <div class="row">
+                @* <div class="row">
                     <div class="col-md-6">
                         <div class="input-affix m-v-10">
                             <i class="prefix-icon anticon anticon-search opacity-04"></i>
                             <input id="keyword" name="keyword" type="text" class="form-control" placeholder="Tìm kiếm đơn hàng">
                         </div>
                     </div>
-                </div>
+                </div> *@
             </div>
 
             <div class="col-lg-4 text-right">
-                <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminProducts" asp-action="Create"><i class="anticon anticon-plus-circle m-r-5"></i><span>Thêm đơn hàng</span></a>
+                <a class="btn btn-primary" asp-area="Admin" asp-controller="AdminOrders" asp-action="Create"><i class="anticon anticon-plus-circle m-r-5"></i><span>Thêm đơn hàng</span></a>
             </div>
         </div>
         <div class="table-responsive">
@@ -65,13 +65,18 @@
                                 <td>@(item.PaymentDate)</td>
 
                                 <td>
-                                    @if (item.TotalMoney != null)
+                                    @if (item?.TotalMoney != null)
                                     {
-                                        item.TotalMoney.ToString("#,##0");
+                                        @item.TotalMoney.ToString("#,##0");
                                     }
                                     VNĐ
                                 </td>
-                                <td>@item.TransactStatusId</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge @(item.TransactStatusId == 1 ? "badge-warning":"badge-primary") badge-dot m-r-10"></span>
+                                        <span>@item.TransactStatus.Status</span>
+                                    </div>
+                                </td>
                                 <td>
                                     @item.Note
 

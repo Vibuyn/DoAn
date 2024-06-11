@@ -28,16 +28,12 @@ namespace CoffeeShopMangement.Areas.Admin.Controllers
             var lstOrder = new List<Order>();
 
             lstOrder = _context.Orders
+                .Include(x=>x.TransactStatus)
                 .AsNoTracking()
                 .OrderByDescending(x => x.OrderId).ToList();
-            
-
-
-
             PagedList<Order> models = new PagedList<Order>(lstOrder.AsQueryable(), pageNumber, pageSize);
 
             ViewBag.CurrentPage = pageNumber;
-
 
             return View(models);
         }
@@ -168,7 +164,7 @@ namespace CoffeeShopMangement.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var order = await _context.Orders.FindAsync(id);
+            var order = await _context.Orders.Include(x=>x.OrderDetails).FirstOrDefaultAsync(x=>x.OrderId == id);
             _context.Orders.Remove(order);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
